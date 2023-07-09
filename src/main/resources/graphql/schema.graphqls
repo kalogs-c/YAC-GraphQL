@@ -1,0 +1,24 @@
+type Post {
+    id: ID!
+    title: String!
+    content: String!
+    creator: String!
+    comments: [Comment]
+}
+
+type Comment {
+    id: ID!
+    content: String!
+    postId: String!
+    creator: String!
+}
+
+type Query {
+    getPostById(id: ID!): Post
+    listUserPosts(creator: String!): [Post]
+}
+
+type Mutation {
+    createPost(title: String!, content: String!, creator: String!): [Post]
+    createComment(content: String!, postId: String!, creator: String!): [Comment]
+}
