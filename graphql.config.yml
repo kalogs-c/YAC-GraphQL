@@ -1,0 +1,6 @@
+schema: src/main/resources/graphql/schema.graphqls
+extensions:
+  endpoints:
+    GraphqlEndpoint:
+      path: /graphql
+      enableCors: true
